@@ -1,35 +1,63 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+// import { useState } from 'react'
+import "./styles/App.scss";
+
+import { Ring } from "./components/Ring";
+import { Link } from "./components/Link";
+import { Counter } from "./components/Counter";
 
 function App() {
-  const [count, setCount] = useState(0)
+  // const [count, setCount] = useState(0)
+
+  const reactLink = <Link text="React" href="https://react.dev/" openInNewTab />;
+  const viteLink = <Link text="Vite" href="https://vitejs.dev/" openInNewTab />;
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
+      <hgroup>
+        <h1>
+          Powered by {viteLink} + {reactLink}
+        </h1>
         <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
+          create-react-app is dead, but {reactLink} is alive. Use {viteLink}:
+          <br />
+          <code>npm create vite@latest [ProjectName] -- --template react-ts</code>
         </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      </hgroup>
+
+      <Ring
+        mainIcon={"logos:react"}
+        subIcons={[
+          "logos:stackblitz-icon",
+          "logos:vitejs",
+          "logos:sass",
+          "logos:typescript-icon-round",
+          "logos:eslint",
+          "logos:prettier",
+          "logos:tailwindcss-icon",
+          "logos:postcss",
+          "logos:editorconfig"
+        ]}
+        duration={7500}
+      />
+
+      <section>
+        <p>
+          There are many ways to use {reactLink}.
+          <br />
+          But why is {viteLink} recommended? Because {viteLink} is too stable.
+          <br />
+          Next.js isn't stable and informations about Remix is few. Astro is great but it isn't good at SSR.
+        </p>
+      </section>
+
+      <section>
+        <Counter />
+        <p className="text-center m-4">
+          with TailwindCSS
+        </p>
+      </section>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

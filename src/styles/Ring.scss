@@ -1,0 +1,48 @@
+@mixin icon-size($size: 1rem) {
+  width: auto;
+  height: $size;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg) translateY(300%) rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg) translateY(300%) rotate(-360deg);
+  }
+}
+
+.ring-system {
+  position: relative;
+  margin: auto;
+  height: 20rem;
+  width: 100%;
+}
+
+.main-icon {
+  @include icon-size(5rem);
+
+  z-index: 0;
+  position: absolute;
+  top: calc(50% - 2.5rem);
+  left: calc(50% - 2.5rem);
+}
+
+.sub-icon {
+  @include icon-size(3rem);
+
+  z-index: -1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+
+  transform: translateY(100vw);
+
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-name: rotate;
+  animation-play-state: running;
+  animation-timing-function: linear;
+}

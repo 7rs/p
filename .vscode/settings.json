@@ -1,0 +1,12 @@
+{
+    "workbench.editor.enablePreview": false,
+    "editor.tabSize": 2,
+    "[json]": {
+        "editor.tabSize": 4
+    },
+    "prettier.configPath": "./.prettierrc",
+    "prettier.ignorePath": "./.prettierignore",
+    "editor.fontFamily": "'Fira Code', 'HackGen35 Console NF', monospace",
+    "editor.fontLigatures": true,
+    "editor.insertSpaces": true
+}

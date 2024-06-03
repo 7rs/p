@@ -1,0 +1,46 @@
+@mixin paddings($left: initial, $right: initial, $top: initial, $bottom: initial) {
+  padding-left: $left;
+  padding-right: $right;
+  padding-top: $top;
+  padding-bottom: $bottom;
+}
+
+@mixin margins($left: initial, $right: initial, $top: initial, $bottom: initial) {
+  margin-left: $left;
+  margin-right: $right;
+  margin-top: $top;
+  margin-bottom: $bottom;
+}
+
+:where(*) {
+  box-sizing: border-box;
+
+  @include paddings(0, 0, 0, 0);
+  @include margins(0, 0, 0, 0);
+}
+
+:where(a) {
+  text-decoration: underline solid 2px blue;
+  color: blue;
+  &:hover {
+    background-color: blue;
+    color: white
+  }
+}
+
+:where(main) {
+  width: 600px;
+  margin: auto;
+}
+
+hgroup {
+  text-align: center;
+  margin: 1.5rem;
+  h1 {
+    font-size: 2rem;
+  }
+}
+
+section {
+  margin: 1.5rem auto;
+}
